@@ -482,7 +482,7 @@
                 {%endif %}
 
               </div>
-
+ <div class="add_to_cart_container_quanity">
 {%- when 'quantity_selector' -%}
                 <div
                   id="Quantity-Form-{{ section.id }}"
@@ -724,6 +724,7 @@
                 </div>
                    {%- endcase -%}
     {%- endfor -%}
+  </div>
               </div>
 
     {% render 'product-media-modal', variant_images: variant_images %}
