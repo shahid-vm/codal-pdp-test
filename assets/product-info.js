@@ -192,7 +192,7 @@ if (!customElements.get('product-info')) {
           }
           else
           {
-            badgeContainer.innerHTML = "Demo";
+            badgeContainer.innerHTML = "Out of Stock";
           }
          
 
