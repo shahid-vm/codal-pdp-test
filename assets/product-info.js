@@ -176,7 +176,7 @@ if (!customElements.get('product-info')) {
           }
 
           var vm_var  = variant.id;
-        console.log(variantId,'variantId');
+        console.log(variantId,'vm_var');
         document.querySelectorAll('[class*="variant_vm_id_"]').forEach(function(element) {
                 if (element.classList.contains('variant_vm_id_' + vm_var)) {
                     element.style.display = 'block';  // Show the matching element
