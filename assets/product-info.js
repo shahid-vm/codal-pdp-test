@@ -204,11 +204,11 @@ if (!customElements.get('product-info')) {
           var SkuContainer_available = variant.sku;
           if(SkuContainer_available)
           {
-             badgeContainer.innerHTML = SkuContainer_available;
+             SkuContainer.innerHTML = SkuContainer_available;
           }
           else
           {
-            badgeContainer.innerHTML = '';
+            SkuContainer.innerHTML = '';
           }
 
           
