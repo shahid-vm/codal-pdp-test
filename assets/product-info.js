@@ -219,6 +219,17 @@ if (!customElements.get('product-info')) {
           input.value = variantId ?? '';
           input.dispatchEvent(new Event('change', { bubbles: true }));
         });
+
+        var vm_variantId  = variantId;
+           $('[class*="variant_vm_id_"]').each(function() {
+if($(this).hasClass('variant_vm_id_' + vm_var)) {
+        $(this).show();
+      } 
+      else {
+        $(this).hide();
+               
+      }
+ });
       }
 
       updateURL(url, variantId) {
