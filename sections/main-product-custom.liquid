@@ -455,6 +455,7 @@
       <div class="add_to_cart_container">
                     
 
+        <div class="add_to_cart_container_price">
                     {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when 'price' -%}
@@ -473,6 +474,8 @@
                   Out of Stock
                   {%endif %}
                 </div>
+              </div>
+              
 {%- when 'quantity_selector' -%}
                 <div
                   id="Quantity-Form-{{ section.id }}"
