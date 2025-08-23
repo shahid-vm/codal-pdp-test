@@ -249,7 +249,7 @@
                   {%for variant in product.variants %}
                      {%if variant.metafields.custom.short_description != blank%}
                       <div class="product-custom-variant-col variant_vm_id_{{ variant.id }}" {% if product.selected_or_first_available_variant.id == variant.id %} style="display:block;"{%else %}style="display:none;"{% endif %} >
-                        {{varaint.metafields.custom.short_description }}
+                        {{variant.metafields.custom.short_description }}
                       </div>
                   {% endif %}
                   {%endfor %}
