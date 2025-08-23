@@ -184,7 +184,7 @@ if (!customElements.get('product-info')) {
                     element.style.display = 'none';   // Hide all others
                 }
           });
-
+          var badgeContainer_available = variant.available;
           var badgeContainer = document.querySelector('.badge-custom-badge-inventory');
           badgeContainer.innerHTML = "Demo";
 
