@@ -40,7 +40,10 @@
         --pdp-font-body: 'MyriadPro', system-ui, sans-serif;
     }
 
-
+*, *::before, *::after {
+    box-sizing: inherit;
+    letter-spacing: 0 !important;
+}
     body {
         font-family: var(--pdp-font-body);
     }
