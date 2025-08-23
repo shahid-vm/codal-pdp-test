@@ -194,6 +194,9 @@ if (!customElements.get('product-info')) {
           {
             badgeContainer.innerHTML = "Out of Stock";
           }
+          
+          var SkuContainer = document.querySelector('.sku-number-custom');
+          
          
 
          console.log(variant,'variant');
