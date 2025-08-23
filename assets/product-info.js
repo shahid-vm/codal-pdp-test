@@ -186,7 +186,7 @@ if (!customElements.get('product-info')) {
           });
 
           var badgeContainer = document.querySelector('.badge-custom-badge-inventory');
-          variant_inventoty_s.innerHTML = "Demo";
+          badgeContainer.innerHTML = "Demo";
 
          console.log(variant,'variant');
 
