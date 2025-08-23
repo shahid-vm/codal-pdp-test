@@ -460,25 +460,25 @@
             {%- case block.type -%}
               {%- when 'price' -%}
                     <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-                  {%- render 'price',
-                    product: product,
-                    use_variant: true,
-                    show_badges: true,
-                    price_class: 'price--large'
-                  -%}
+                    {%- render 'price',
+                      product: product,
+                      use_variant: true,
+                      show_badges: true,
+                      price_class: 'price--large'
+                    -%}
                 </div>
                 <div class="badge-custom-badge-inventory">
-                  {% if product.selected_or_first_available_variant.available %}
-                  In Stock
-                    {%else %}
-                  Out of Stock
-                  {%endif %}
+                    {% if product.selected_or_first_available_variant.available %}
+                    In Stock
+                      {%else %}
+                    Out of Stock
+                    {%endif %}
                 </div>
                 {%if product.selected_or_first_available_variant.sku  !=blank %}
-                <div class="badge-custom-badge-inventory-sku">
-                  <span>SKU</span>
-                  <span class="sku-number-custom">{{product.selected_or_first_available_variant.sku }}</span>
-                </div>
+                  <div class="badge-custom-badge-inventory-sku">
+                    <span>SKU</span>
+                    <span class="sku-number-custom">{{product.selected_or_first_available_variant.sku }}</span>
+                  </div>
                 {%endif %}
 
               </div>
