@@ -185,6 +185,9 @@ if (!customElements.get('product-info')) {
                 }
           });
 
+          var variant_inventoty_s = querySelector('.badge-custom-badge-inventory');
+          variant_inventoty_s.innerHTML = "Demo";
+
          console.log(variant,'variant');
 
           this.updateMedia(html, variant?.featured_media?.id);
