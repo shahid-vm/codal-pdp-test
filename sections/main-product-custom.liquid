@@ -16,7 +16,6 @@
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
   {{ 'custom-product-page.css' | asset_url | stylesheet_tag }}
-
   {% unless product.has_only_default_variant %}
     {{ 'component-product-variant-picker.css' | asset_url | stylesheet_tag }}
     {{ 'component-swatch-input.css' | asset_url | stylesheet_tag }}
@@ -455,6 +454,7 @@
                     </volume-pricing>
                   {%- endif -%}
                 </div>
+                
               {%- when 'popup' -%}
                 <modal-opener
                   class="product-popup-modal__opener quick-add-hidden"
@@ -683,6 +683,19 @@
           </a>
         </section>
       </div>
+      <div class="add_to_cart_container">
+                    heading_2
+                    <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                  {%- render 'price',
+                    product: product,
+                    use_variant: true,
+                    show_badges: true,
+                    price_class: 'price--large'
+                  -%}
+                </div>
+
+                {{product.metafields.custom.short_description}}
+                </div>
     </div>
 
     {% render 'product-media-modal', variant_images: variant_images %}
