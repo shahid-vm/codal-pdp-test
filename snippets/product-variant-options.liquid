@@ -94,7 +94,7 @@
     <label for="{{ input_id }}" class="custom_variant_option-row">
       <div class="custom_variant_option">
         <p class="custom_variant_option_title">
-        {{ value -}} 
+        {{ value -}} --{{value.variant.price }}
         {{ value.variant.compare_at_price | minus: value.variant.price | times: 100.0 | divided_by: value.variant.compare_at_price | money_without_currency | times: 100 | remove: '.0'}}% OFF
         </p>
       </div>
