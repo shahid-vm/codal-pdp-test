@@ -220,7 +220,7 @@ if (!customElements.get('product-info')) {
           input.dispatchEvent(new Event('change', { bubbles: true }));
         });
 
-        var vm_variantId  = variantId;
+        var vm_var  = variantId;
         document.querySelectorAll('[class*="variant_vm_id_"]').forEach(function(element) {
     if (element.classList.contains('variant_vm_id_' + vm_var)) {
         element.style.display = 'block';  // Show the matching element
