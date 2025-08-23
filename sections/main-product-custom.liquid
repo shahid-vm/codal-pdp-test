@@ -474,10 +474,12 @@
                   Out of Stock
                   {%endif %}
                 </div>
+                {%if product.selected_or_first_available_variant.sku  !=blank %}
                 <div class="badge-custom-badge-inventory-sku">
                   <span>SKU</span>
                   <span class="sku-number-custom">{{product.selected_or_first_available_variant.sku }}</span>
                 </div>
+                {%endif %}
 
               </div>
 
