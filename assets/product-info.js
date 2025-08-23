@@ -202,6 +202,14 @@ if (!customElements.get('product-info')) {
           // update the SKU id based on the variant selection 
           var SkuContainer = document.querySelector('.sku-number-custom');
           var SkuContainer_available = variant.sku;
+          if(SkuContainer_available)
+          {
+             badgeContainer.innerHTML = SkuContainer_available;
+          }
+          else
+          {
+            badgeContainer.innerHTML = '';
+          }
 
           
          
