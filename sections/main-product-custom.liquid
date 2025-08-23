@@ -467,7 +467,11 @@
                   -%}
                 </div>
                 <div class="badge-custom-badge-inventory">
-                  {{product.selected_or_first_available_variant.available }}
+                  {% if product.selected_or_first_available_variant.available %}
+                  
+                    {%else %}
+                  
+                  {%endif %}
                 </div>
 {%- when 'quantity_selector' -%}
                 <div
