@@ -221,15 +221,13 @@ if (!customElements.get('product-info')) {
         });
 
         var vm_variantId  = variantId;
-           $('[class*="variant_vm_id_"]').each(function() {
-if($(this).hasClass('variant_vm_id_' + vm_var)) {
-        $(this).show();
-      } 
-      else {
-        $(this).hide();
-               
-      }
- });
+        document.querySelectorAll('[class*="variant_vm_id_"]').forEach(function(element) {
+    if (element.classList.contains('variant_vm_id_' + vm_var)) {
+        element.style.display = 'block';  // Show the matching element
+    } else {
+        element.style.display = 'none';   // Hide all others
+    }
+});
       }
 
       updateURL(url, variantId) {
