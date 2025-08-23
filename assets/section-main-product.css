@@ -31,7 +31,7 @@ product-info {
     padding-right: var(--media-shadow-horizontal-offset);
   }
 
-  .product__info-wrapper,.add_to_cart_container {
+  .product__info-wrapper {
     padding: 0 0 0 5rem;
   }
 
