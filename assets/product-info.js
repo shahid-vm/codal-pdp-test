@@ -175,6 +175,7 @@ if (!customElements.get('product-info')) {
             return;
           }
 
+        // display the variant based short description 
         var vm_var  = variant.id;
         console.log(vm_var,'vm_var');
         document.querySelectorAll('[class*="variant_vm_id_"]').forEach(function(element) {
@@ -184,6 +185,9 @@ if (!customElements.get('product-info')) {
                     element.style.display = 'none';   // Hide all others
                 }
           });
+
+          // update the stock status 
+
           var badgeContainer_available = variant.available;
           var badgeContainer = document.querySelector('.badge-custom-badge-inventory');
           if(badgeContainer_available)
@@ -194,8 +198,11 @@ if (!customElements.get('product-info')) {
           {
             badgeContainer.innerHTML = "Out of Stock";
           }
-          
+
+          // update the SKU id based on the variant selection 
           var SkuContainer = document.querySelector('.sku-number-custom');
+          var SkuContainer_available = variant.sku;
+
           
          
 
