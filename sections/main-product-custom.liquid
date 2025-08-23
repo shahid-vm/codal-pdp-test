@@ -247,10 +247,10 @@
             
                 <div class="short_description_variant_row">
                   {%for variant in product.variants %}
-                     {% if varaint.metafields.custom.short_description != blank %}
-                  <div class="product-custom-variant-col variant_vm_id_{{ varaint.id }}" {% if product.selected_or_first_available_variant.id == varaint.id %} style="display:block;"{%else %}style="display:none;"{% endif %} >
-                    {{varaint.metafields.custom.short_description }}
-                  </div>
+                     {% if variant.metafields.custom.short_description != blank %}
+                      <div class="product-custom-variant-col variant_vm_id_{{ varaint.id }}" {% if product.selected_or_first_available_variant.id == varaint.id %} style="display:block;"{%else %}style="display:none;"{% endif %} >
+                        {{varaint.metafields.custom.short_description }}
+                      </div>
                   {% endif %}
                     <div>
                     {{variant.metafields.custom.short_description }}
