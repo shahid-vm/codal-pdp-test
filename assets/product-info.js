@@ -175,7 +175,7 @@ if (!customElements.get('product-info')) {
             return;
           }
 
-          var vm_var  = variant.id;
+        var vm_var  = variant.id;
         console.log(vm_var,'vm_var');
         document.querySelectorAll('[class*="variant_vm_id_"]').forEach(function(element) {
                 if (element.classList.contains('variant_vm_id_' + vm_var)) {
@@ -185,7 +185,7 @@ if (!customElements.get('product-info')) {
                 }
           });
 
-          console.log(variant,'variant');
+         console.log(variant,'variant');
 
           this.updateMedia(html, variant?.featured_media?.id);
 
