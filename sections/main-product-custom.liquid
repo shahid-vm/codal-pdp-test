@@ -246,6 +246,9 @@
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
             
                 <div class="short_description_variant_row">
+                  {%for variant in product.variants %}
+                    {{variant.metafields.custom.short_description }}
+                  {%endfor %}
                   custom.short_description
                 </div>
               {%- when 'rating' -%}
