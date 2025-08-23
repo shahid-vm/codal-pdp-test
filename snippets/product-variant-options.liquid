@@ -92,7 +92,8 @@
       {{ input_dataset }}
     >
     <label for="{{ input_id }}">
-      {{ value -}} - de
+      <div class="custom_variant_option">  {{ value -}} </div>
+    
       {{ label_unavailable }}
     </label>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
