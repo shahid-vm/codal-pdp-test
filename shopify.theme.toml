@@ -1,0 +1,4 @@
+[environments.dev]
+store = "codal-devtest.myshopify.com"
+password = "shptka_f003beaa25a37f18d0836efd503ba610"
+# Run with: shopify theme dev -e dev
