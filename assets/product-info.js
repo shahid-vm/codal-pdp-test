@@ -186,7 +186,15 @@ if (!customElements.get('product-info')) {
           });
           var badgeContainer_available = variant.available;
           var badgeContainer = document.querySelector('.badge-custom-badge-inventory');
-          badgeContainer.innerHTML = "Demo";
+          if(badgeContainer_available)
+          {
+             badgeContainer.innerHTML = "In Stock";
+          }
+          else
+          {
+            badgeContainer.innerHTML = "Demo";
+          }
+         
 
          console.log(variant,'variant');
 
