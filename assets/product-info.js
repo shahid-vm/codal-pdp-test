@@ -194,11 +194,12 @@ if (!customElements.get('product-info')) {
           if(badgeContainer_available)
           {
              badgeContainer.innerHTML = "In Stock";
-             stickyContainer.innerHTML = "";
+             stickyContainer.innerHTML = "Add to Cart";
           }
           else
           {
             badgeContainer.innerHTML = "Out of Stock";
+            stickyContainer.innerHTML = "Sold out"; 
           }
 
           // update the SKU id based on the variant selection 
