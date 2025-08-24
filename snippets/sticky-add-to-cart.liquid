@@ -1,9 +1,8 @@
 <div class="product-top-bar">
   <!-- Breadcrumb -->
   <div class="breadcrumb">
-    <a href="/collections/all">Shop Categories</a> <span>›</span>
-    <a href="/collections/lubricants">Lubricants</a> <span>›</span>
-    <a href="/collections/engine-oils">Engine Oils</a> <span>›</span>
+    <a href="/collections/all">Shop Categories</a> <span>›</span> <a href="/collections/lubricants">Lubricants</a>
+    <span>›</span> <a href="/collections/engine-oils">Engine Oils</a> <span>›</span>
     <span class="product-title">Shell Helix Ultra ECT C3 5W30 Pure Plus Fs</span>
   </div>
 
@@ -13,3 +12,96 @@
     <button class="add-to-cart-btn" id="addToCartBtn">Add to Cart</button>
   </div>
 </div>
+<style>
+      /* ===== Top Product Info Bar ===== */
+  .product-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e8e8e8; /* Background as per screenshot */
+    padding: 8px 15px;
+    border-bottom: 1px solid #d1d1d1;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* ===== Breadcrumb Styling ===== */
+  .product-top-bar .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    color: #555;
+    flex-wrap: wrap;
+  }
+
+  .product-top-bar .breadcrumb a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.3s ease;
+  }
+
+  .product-top-bar .breadcrumb a:hover {
+    color: #000;
+  }
+
+  .product-top-bar .breadcrumb span {
+    color: #999;
+    margin: 0 3px;
+  }
+
+  /* ===== Product Title ===== */
+  .product-top-bar .product-title {
+    font-weight: 500;
+    font-size: 13px;
+    color: #333;
+    margin-left: 5px;
+  }
+
+  /* ===== Price Styling ===== */
+  .product-top-bar .product-price {
+    font-weight: bold;
+    font-size: 15px;
+    color: #000;
+    margin-right: 15px;
+  }
+
+  /* ===== Add to Cart Button ===== */
+  .product-top-bar .add-to-cart-btn {
+    background-color: #ffb400; /* Yellow Button */
+    color: #000;
+    border: none;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 8px 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .product-top-bar .add-to-cart-btn:hover {
+    background-color: #e5a700;
+    transform: scale(1.02);
+  }
+
+  /* ===== Responsive for Mobile ===== */
+  @media (max-width: 768px) {
+    .product-top-bar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .product-top-bar .product-price,
+    .product-top-bar .add-to-cart-btn {
+      margin: 0;
+    }
+
+    .product-top-bar .add-to-cart-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>
