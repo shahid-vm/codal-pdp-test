@@ -52,31 +52,6 @@
   {%- endif -%}
 {%- endif -%}
 
-
-    {% assign specs = product.metafields.custom.specification %}
-    {% if specs != blank %}
-      <div class="accordion-item">
-        <button class="accordion-header">
-          <span>Specification</span>
-          <span class="accordion-icon">+</span>
-        </button>
-        <div class="accordion-content">
-          <table class="spec-table">
-            <tbody>
-              {% for spec in specs %}
-                {% assign key = spec[0] | replace: '_', ' ' | capitalize %}
-                {% assign value = spec[1] %}
-                <tr>
-                  <td class="spec-key">{{ key }}</td>
-                  <td class="spec-value">{{ value }}</td>
-                </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    {% endif %}
-
     <!-- Product Data Sheets Accordion -->
     {%- assign ds_mf = product.metafields.custom.data_sheet -%}
 
