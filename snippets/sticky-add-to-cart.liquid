@@ -134,3 +134,17 @@
     }
   }
 </style>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+  // Get the sticky button and the actual Add to Cart button
+  const stickyBtn = document.getElementById("Sticky_addToCartBtn");
+  const addToCartBtn = document.querySelector(".product-form__submit");
+
+  if (stickyBtn && addToCartBtn) {
+    stickyBtn.addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent any default behavior
+      addToCartBtn.click(); // Trigger the original Add to Cart button click
+    });
+  }
+});
+    </script>
