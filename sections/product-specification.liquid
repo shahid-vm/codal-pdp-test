@@ -19,7 +19,7 @@
     {% endif %}
 
     <!-- Specification Accordion -->
-    {% assign specs = product.metafields.specification %}
+    {% assign specs = product.metafields.custom.specification %}
     {% if specs != blank %}
       <div class="accordion-item">
         <button class="accordion-header">
