@@ -9,7 +9,7 @@
     <div class="product-price">
          <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
             <span class="product-price_sticky_wrraper"></span>
-                    {{ product.selected_or_first_available_variant.price }}
+                    {{ product.selected_or_first_available_variant.price |divided_by : 100}}
             </div>
     </div>
     <button class="add-to-cart-btn Sticky_add-to-cart-btn" id="Sticky_addToCartBtn">Add to Cart</button>
