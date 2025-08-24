@@ -168,27 +168,47 @@
     }
 
     /* Table Styling */
-    .spec-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
+    /* Main Table Styling */
+.specification-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+}
 
-    .spec-table td {
-      padding: 10px 12px;
-      border: 1px solid #e1e1e1;
-      font-size: 15px;
-    }
+/* Table Cells */
+.specification-table td {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  color: #333;
+}
 
-    .spec-key {
-      font-weight: bold;
-      width: 40%;
-      background-color: #f7f7f7;
-    }
+/* First Column Styling */
+.specification-table td:first-child {
+  font-weight: bold;
+  background-color: #f9f9f9;
+  width: 35%;
+}
 
-    .spec-value {
-      color: #333;
-    }
+/* Second Column Styling */
+.specification-table td:last-child {
+  color: #444;
+  width: 65%;
+}
+
+/* Alternate Row Background */
+.specification-table tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+/* Hover Effect */
+.specification-table tr:hover {
+  background-color: #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
 
     /* Data Sheet Links */
     .data-sheet-list {
