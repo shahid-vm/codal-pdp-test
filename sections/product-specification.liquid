@@ -19,6 +19,40 @@
     {% endif %}
 
     <!-- Specification Accordion -->
+
+    {%- assign spec_mf = product.metafields.custom.product_specification -%}
+
+{%- if spec_mf != blank -%}
+  {%- comment %} Prefer .value for JSON metafields; fallback to parse_json if metafield is plain text. {% endcomment -%}
+  {%- assign specifications = spec_mf.value -%}
+  {%- if specifications == blank -%}
+    {%- assign specifications = spec_mf | default: '{}' | parse_json -%}
+  {%- endif -%}
+
+  {%- if specifications != blank and specifications.size > 0 -%}
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span>Product Specifications</span>
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <ul class="specification-list">
+          {%- for spec in specifications -%}
+            {%- assign label = spec[0] | replace: '_', ' ' | capitalize -%}
+            {%- assign value = spec[1] -%}
+            {%- if value != blank -%}
+              <li>
+                <strong>{{ label }}:</strong> {{ value }}
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+
     {% assign specs = product.metafields.custom.specification %}
     {% if specs != blank %}
       <div class="accordion-item">
