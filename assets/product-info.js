@@ -190,6 +190,7 @@ if (!customElements.get('product-info')) {
 
           var badgeContainer_available = variant.available;
           var badgeContainer = document.querySelector('.badge-custom-badge-inventory');
+          var badgeContainer = document.querySelector('.badge-custom-badge-inventory');
           if(badgeContainer_available)
           {
              badgeContainer.innerHTML = "In Stock";
