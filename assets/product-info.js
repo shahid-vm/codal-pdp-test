@@ -194,6 +194,7 @@ if (!customElements.get('product-info')) {
           if(badgeContainer_available)
           {
              badgeContainer.innerHTML = "In Stock";
+             stickyContainer.innerHTML = "";
           }
           else
           {
