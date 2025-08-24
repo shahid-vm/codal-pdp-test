@@ -20,7 +20,7 @@
 
     <!-- Specification Accordion -->
 
-    {%- assign spec_mf = product.metafields.custom.product_specification -%}
+    {%- assign spec_mf = product.metafields.custom.specification -%}
 
 {%- if spec_mf != blank -%}
   {%- comment %} Prefer .value for JSON metafields; fallback to parse_json if metafield is plain text. {% endcomment -%}
