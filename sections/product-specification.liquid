@@ -51,17 +51,6 @@
               </tbody>
             </table>
 
-            <ul class="specification-list">
-              {%- for spec in specifications -%}
-                {%- assign label = spec[0] | replace: '_', ' ' | capitalize -%}
-                {%- assign value = spec[1] -%}
-                {%- if value != blank -%}
-                  <li>
-                    <strong>{{ label }}:</strong> {{ value }}
-                  </li>
-                {%- endif -%}
-              {%- endfor -%}
-            </ul>
           </div>
         </div>
       {%- endif -%}
