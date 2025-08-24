@@ -1,7 +1,7 @@
 <!-- sections/product-specification.liquid -->
 
 <section id="product-specification-section" class="product-spec-section page-width">
-    <div class="product_variant_based_short_desciption"></div>
+  <div class="product_variant_based_short_desciption"></div>
   <div class="accordion-container">
     <!-- Product Description Accordion -->
     {% if product.description != blank %}
@@ -37,22 +37,22 @@
           </button>
           <div class="accordion-content">
             <div class="specification-table-row">
-            <table class="specification-table">
-              <tbody>
-                {%- for spec in specifications -%}
-                  {%- assign label = spec[0] | replace: '_', ' ' | capitalize -%}
-                  {%- assign value = spec[1] -%}
-                  {%- if value != blank -%}
-                    <tr>
-                      <td>
-                        <span class="specification-inner">{{ label }}</span>
-                      </td>
-                      <td>{{ value }}</td>
-                    </tr>
-                  {%- endif -%}
-                {%- endfor -%}
-              </tbody>
-            </table>
+              <table class="specification-table">
+                <tbody>
+                  {%- for spec in specifications -%}
+                    {%- assign label = spec[0] | replace: '_', ' ' | capitalize -%}
+                    {%- assign value = spec[1] -%}
+                    {%- if value != blank -%}
+                      <tr>
+                        <td>
+                          <span class="specification-inner">{{ label }}</span>
+                        </td>
+                        <td>{{ value }}</td>
+                      </tr>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -88,7 +88,14 @@
                   {%- if sheet_url != blank -%}
                     <li>
                       <a href="{{ sheet_url }}" target="_blank">
-                        <span class="pdf-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24" width="24">
+                        <span class="pdf-icon">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            height="24"
+                            width="24"
+                          >
                             <g clip-path="url(#clip0_2006_2355)" id="pdf-svgrepo-com 1">
                             <g id="Group">
                             <path fill="black" d="M17.7381 0H9.76391H9.146L8.70936 0.436594L2.6728 6.47353L2.23621 6.91012V7.52775V19.9737C2.23621 22.1937 4.04221 24 6.26258 24H17.7381C19.9578 24 21.7638 22.1937 21.7638 19.9737V4.02638C21.7638 1.806 19.9578 0 17.7381 0ZM20.2733 19.9737C20.2733 21.3742 19.1383 22.5092 17.7381 22.5092H6.26258C4.86177 22.5092 3.72674 21.3742 3.72674 19.9737V7.5277H7.65092C8.81741 7.5277 9.76391 6.58186 9.76391 5.41505V1.49081H17.7381C19.1383 1.49081 20.2733 2.62584 20.2733 4.02638V19.9737Z" id="Vector"/>
@@ -102,7 +109,8 @@
                             <rect fill="white" height="24" width="24"/>
                             </clipPath>
                             </defs>
-                            </svg></span>
+                          </svg>
+                        </span>
                         {{ sheet_name }}
                       </a>
                     </li>
@@ -118,183 +126,183 @@
 </section>
 
 <style>
-      .accordion-container {
-        max-width: 69%;
-        margin: 30px 0;
-        background-color: #fff;
-      }
+        .accordion-container {
+          max-width: 69%;
+          margin: 30px 0;
+          background-color: #fff;
+        }
 
-      .accordion-container {
-        border: none;
+        .accordion-container {
+          border: none;
 
-      }
+        }
 
-      /* Accordion Header */
-      .accordion-header {
-        width: 100%;
-        text-align: left;
-        background-color: #fff;
-        padding: 15px 0px;
-          font-size: 18px;
-       font-family:'MyriadPro';
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transition: background 0.3s ease;
-        border:none;
-         border-bottom: 1px solid #e5e5e5;
-      }
+        /* Accordion Header */
+        .accordion-header {
+          width: 100%;
+          text-align: left;
+          background-color: #fff;
+          padding: 15px 0px;
+            font-size: 18px;
+         font-family:'MyriadPro';
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          transition: background 0.3s ease;
+          border:none;
+           border-bottom: 1px solid #e5e5e5;
+        }
 
-      .accordion-item.active .accordion-content
+        .accordion-item.active .accordion-content
+        {
+            border-bottom: 1px solid #e5e5e5;
+            margin-bottom: 0px;
+        }
+         .accordion-item.active .accordion-header
       {
-          border-bottom: 1px solid #e5e5e5;
-          margin-bottom: 0px;
+          border-bottom: none;
       }
-       .accordion-item.active .accordion-header
+
+        .accordion-icon {
+          font-size: 20px;
+          font-weight: bold;
+          transition: transform 0.3s ease;
+        }
+
+
+        .accordion-content {
+          max-height: 0;
+          overflow: hidden;
+           padding: 0px 0;
+          background-color: #fff;
+          transition: max-height 0.4s ease, padding 0.3s ease;
+        }
+
+        .accordion-item.active .accordion-content {
+          padding: 15px 0;
+          max-height: 1200px;
+        }
+
+        /* Table Styling */
+    .specification-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+    }
+
+
+    .specification-table td {
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      color: #333;
+    }
+
+
+    .specification-table td:first-child {
+      font-weight: bold;
+      width: 35%;
+    }
+
+
+    .specification-table td:last-child {
+      color: #444;
+      width: 65%;
+    }
+
+
+    .specification-table tr:nth-child(even) {
+      background-color: #f5f5f5;
+    }
+
+    /* Hover Effect */
+    .specification-table tr:hover {
+      background-color: #f0f0f0;
+      transition: background-color 0.2s ease;
+    }
+    .specification-inner
     {
-        border-bottom: none;
+    font-weight:700;
     }
-
-      .accordion-icon {
-        font-size: 20px;
-        font-weight: bold;
-        transition: transform 0.3s ease;
-      }
-
-
-      .accordion-content {
-        max-height: 0;
-        overflow: hidden;
-         padding: 0px 0;
-        background-color: #fff;
-        transition: max-height 0.4s ease, padding 0.3s ease;
-      }
-
-      .accordion-item.active .accordion-content {
-        padding: 15px 0;
-        max-height: 1200px;
-      }
-
-      /* Table Styling */
-  .specification-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 15px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-  }
-
-
-  .specification-table td {
-    padding: 10px 15px;
-    border: 1px solid #ddd;
-    color: #333;
-  }
-
-
-  .specification-table td:first-child {
-    font-weight: bold;
-    width: 35%;
-  }
-
-
-  .specification-table td:last-child {
-    color: #444;
-    width: 65%;
-  }
-
-
-  .specification-table tr:nth-child(even) {
-    background-color: #f5f5f5;
-  }
-
-  /* Hover Effect */
-  .specification-table tr:hover {
-    background-color: #f0f0f0;
-    transition: background-color 0.2s ease;
-  }
-  .specification-inner
-  {
-  font-weight:700;
-  }
-  .specification-table-row 
-  {
-    overflow:auto;
-}
-.specification-table-row  table
-{
-    min-width:500px;
-}
-
-
-  /* Data Sheet Links */
-
-  .product-data-sheets h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 12px;
-    color: #111;
-  }
-
-
-  .pdf-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
- 
-  .pdf-list li {
-    margin-bottom: 10px;
-  }
-
-  /* Links */
-  .pdf-list a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #222;
-    font-size: 15px;
-    font-weight: 500;
-    transition: color 0.2s ease;
-     text-decoration: underline;
-  }
-
-  /* Hover Effect */
-  .pdf-list a:hover {
-    
-    text-decoration: underline;
-  }
-span.pdf-icon svg{
-    width: 24px;
-    height: 24px;
-}
-span.pdf-icon {
-    margin-right: 8px;
-}
-
-      p.subheading {
-        margin-bottom: 25px;
-    }
-    span.data-sheet-number--count {
-      background: #F7F7F8;
-        font-size: 10px;
-        padding: 5px;
-        border-radius: 8px;
-        border: 1px solid #F7F7F8;
-        position: absolute;
-        right: 20px;
-        top: 18px;
-        width: 25px;
-        height: 25px;
-        display: inline-flex;
-        justify-content: center;
-    }
-    .accordion-header
+    .specification-table-row
     {
-    position: relative;
+      overflow:auto;
+  }
+  .specification-table-row  table
+  {
+      min-width:500px;
+  }
+
+
+    /* Data Sheet Links */
+
+    .product-data-sheets h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #111;
     }
+
+
+    .pdf-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+
+    .pdf-list li {
+      margin-bottom: 10px;
+    }
+
+    /* Links */
+    .pdf-list a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #222;
+      font-size: 15px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+       text-decoration: underline;
+    }
+
+    /* Hover Effect */
+    .pdf-list a:hover {
+
+      text-decoration: underline;
+    }
+  span.pdf-icon svg{
+      width: 24px;
+      height: 24px;
+  }
+  span.pdf-icon {
+      margin-right: 8px;
+  }
+
+        p.subheading {
+          margin-bottom: 25px;
+      }
+      span.data-sheet-number--count {
+        background: #F7F7F8;
+          font-size: 10px;
+          padding: 5px;
+          border-radius: 8px;
+          border: 1px solid #F7F7F8;
+          position: absolute;
+          right: 20px;
+          top: 18px;
+          width: 25px;
+          height: 25px;
+          display: inline-flex;
+          justify-content: center;
+      }
+      .accordion-header
+      {
+      position: relative;
+      }
 </style>
 
 <script>
@@ -318,18 +326,20 @@ span.pdf-icon {
       });
     });
   });
-
-
 </script>
 
-{% comment %} 
-Short Description for mobile  
+{% comment %}
+  Short Description for mobile
 {% endcomment %}
- <script>
-  document.addEventListener("DOMContentLoaded", function () {
-     if (window.innerWidth <= 768) {
-        
-     }
-      });
-</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.innerWidth <= 768) {
+      const sourceElement = document.querySelector('.short_description_variant_row');
+      const targetElement = document.querySelector('.product_variant_based_short_desciption');
 
+      if (sourceElement && targetElement) {
+        targetElement.innerHTML = sourceElement.innerHTML;
+      }
+    }
+  });
+</script>
