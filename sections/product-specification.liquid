@@ -77,9 +77,7 @@
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-content">
-            <ul class="data-sheet-list">
-
-                <div class="product-data-sheets">
+            <div class="product-data-sheets">
   <h3>Product Data Sheets</h3>
   <ul class="pdf-list">
     <li>
@@ -103,6 +101,9 @@
   </ul>
 </div>
 
+            <ul class="data-sheet-list">
+
+                
               {%- for sheet in data_sheets -%}
                 {%- assign sheet_name = sheet.name | default: sheet.name | default: 'Download PDF' -%}
                 {%- assign sheet_url = sheet.url | default: sheet.url -%}
