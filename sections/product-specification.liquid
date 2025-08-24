@@ -37,11 +37,18 @@
           <div class="accordion-content">
             <table class="specification-table">
               <tbody>
-                
-                <tr>
-                  <td>ACEA specification</td>
-                  <td>A5/B5</td>
+                {%- for spec in specifications -%}
+                {%- assign label = spec[0] | replace: '_', ' ' | capitalize -%}
+                {%- assign value = spec[1] -%}
+                {%- if value != blank -%}
+                     <tr>
+                  <td> <strong>{{ label }}</strong></td>
+                  <td>{{ value }}</td>
                 </tr>
+                
+                {%- endif -%}
+              {%- endfor -%}
+               
                 <tr>
                   <td>API specification</td>
                   <td>SL</td>
