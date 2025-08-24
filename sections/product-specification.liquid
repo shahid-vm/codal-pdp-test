@@ -79,12 +79,32 @@
           <div class="accordion-content">
             <div class="product-data-sheets">
             <ul class="pdf-list">
+                
+                 {%- for sheet in data_sheets -%}
+                {%- assign sheet_name = sheet.name | default: sheet.name | default: 'Download PDF' -%}
+                {%- assign sheet_url = sheet.url | default: sheet.url -%}
+                {%- if sheet_url != blank -%}
                 <li>
-                <a href="#" target="_blank">
+                <a href="{{ sheet_url }}" target="_blank">
                     <span class="pdf-icon">📄</span>
-                    Data Sheet Lorem Ipsum
+                    {{ sheet_name }}
                 </a>
                 </li>
+                {%- endif -%}
+              {%- endfor -%}
+
+                 {%- for sheet in data_sheets -%}
+                {%- assign sheet_name = sheet.name | default: sheet.name | default: 'Download PDF' -%}
+                {%- assign sheet_url = sheet.url | default: sheet.url -%}
+                {%- if sheet_url != blank -%}
+                  <li>
+                    <a href="{{ sheet_url }}" target="_blank" rel="noopener noreferrer">
+                      {{ sheet_name }}
+                    </a>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+
     <li>
       <a href="#" target="_blank">
         <span class="pdf-icon">📄</span>
