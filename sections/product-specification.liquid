@@ -45,7 +45,7 @@
 
     <!-- Product Data Sheets Accordion -->
     {% assign data_sheets = product.metafields.custom.data_sheet | default: "[]" %}
-    {% if data_sheets.size > 0 %}
+    {% if data_sheets.size != blank  %}
       <div class="accordion-item">
         <button class="accordion-header">
           <span>Product Data Sheets ({{ data_sheets.size }})</span>
