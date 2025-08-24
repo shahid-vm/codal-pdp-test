@@ -44,26 +44,34 @@
     {% endif %}
 
     <!-- Product Data Sheets Accordion -->
-    {% assign data_sheets = product.metafields.custom.data_sheet  %}
-    {% if data_sheets.size != blank  %}
-      <div class="accordion-item">
-        <button class="accordion-header">
-          <span>Product Data Sheets ({{ data_sheets.size }})</span>
-          <span class="accordion-icon">+</span>
-        </button>
-        <div class="accordion-content">
-          <ul class="data-sheet-list">
-            {% for sheet in data_sheets %}
+
+    {% assign data_sheets_json = product.metafields.custom.data_sheet %}
+
+{% if data_sheets_json != blank %}
+  {% assign data_sheets = data_sheets_json | default: '[]' | parse_json %}
+  {% if data_sheets.size > 0 %}
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span>Product Data Sheets ({{ data_sheets.size }})</span>
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <ul class="data-sheet-list">
+          {% for sheet in data_sheets %}
+            {% if sheet.url != blank %}
               <li>
                 <a href="{{ sheet.url }}" target="_blank" rel="noopener noreferrer">
-                  {{ sheet.name }}
+                  {{ sheet.name | default: 'Download PDF' }}
                 </a>
               </li>
-            {% endfor %}
-          </ul>
-        </div>
+            {% endif %}
+          {% endfor %}
+        </ul>
       </div>
-    {% endif %}
+    </div>
+  {% endif %}
+{% endif %}
+
   </div>
 </section>
 
