@@ -44,7 +44,7 @@
     {% endif %}
 
     <!-- Product Data Sheets Accordion -->
-    {% assign data_sheets = product.metafields.custom.data_sheet | default: "[]" %}
+    {% assign data_sheets = product.metafields.custom.data_sheet  %}
     {% if data_sheets.size != blank  %}
       <div class="accordion-item">
         <button class="accordion-header">
