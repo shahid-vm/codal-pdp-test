@@ -38,19 +38,19 @@
             <table class="specification-table">
               <tbody>
                 {%- for spec in specifications -%}
-                {%- assign label = spec[0] | replace: '_', ' ' | capitalize -%}
-                {%- assign value = spec[1] -%}
-                {%- if value != blank -%}
-                     <tr>
-                  <td> <span class="specification-inner">{{ label }}</span></td>
-                  <td>{{ value }}</td>
-                </tr>
-                
-                {%- endif -%}
-              {%- endfor -%}
+                  {%- assign label = spec[0] | replace: '_', ' ' | capitalize -%}
+                  {%- assign value = spec[1] -%}
+                  {%- if value != blank -%}
+                    <tr>
+                      <td>
+                        <span class="specification-inner">{{ label }}</span>
+                      </td>
+                      <td>{{ value }}</td>
+                    </tr>
+                  {%- endif -%}
+                {%- endfor -%}
               </tbody>
             </table>
-
           </div>
         </div>
       {%- endif -%}
@@ -78,51 +78,23 @@
           </button>
           <div class="accordion-content">
             <div class="product-data-sheets">
-            <ul class="pdf-list">
-                
-                 {%- for sheet in data_sheets -%}
-                {%- assign sheet_name = sheet.name | default: sheet.name | default: 'Download PDF' -%}
-                {%- assign sheet_url = sheet.url | default: sheet.url -%}
-                {%- if sheet_url != blank -%}
-                <li>
-                <a href="{{ sheet_url }}" target="_blank">
-                    <span class="pdf-icon">📄</span>
-                    {{ sheet_name }}
-                </a>
-                </li>
-                {%- endif -%}
-              {%- endfor -%}
-
-                 {%- for sheet in data_sheets -%}
-                {%- assign sheet_name = sheet.name | default: sheet.name | default: 'Download PDF' -%}
-                {%- assign sheet_url = sheet.url | default: sheet.url -%}
-                {%- if sheet_url != blank -%}
-                  <li>
-                    <a href="{{ sheet_url }}" target="_blank" rel="noopener noreferrer">
-                      {{ sheet_name }}
-                    </a>
-                  </li>
-                {%- endif -%}
-              {%- endfor -%}
-
-    <li>
-      <a href="#" target="_blank">
-        <span class="pdf-icon">📄</span>
-        Data Sheet Lorem Ipsum Dolor
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_blank">
-        <span class="pdf-icon">📄</span>
-        Data Sheet Lorem Ipsum Dolor Sit Amet
-      </a>
-    </li>
-  </ul>
-</div>
+              <ul class="pdf-list">
+                {%- for sheet in data_sheets -%}
+                  {%- assign sheet_name = sheet.name | default: sheet.name | default: 'Download PDF' -%}
+                  {%- assign sheet_url = sheet.url | default: sheet.url -%}
+                  {%- if sheet_url != blank -%}
+                    <li>
+                      <a href="{{ sheet_url }}" target="_blank">
+                        <span class="pdf-icon">📄</span>
+                        {{ sheet_name }}
+                      </a>
+                    </li>
+                  {%- endif -%}
+                {%- endfor -%}
+              </ul>
+            </div>
 
             <ul class="data-sheet-list">
-
-                
               {%- for sheet in data_sheets -%}
                 {%- assign sheet_name = sheet.name | default: sheet.name | default: 'Download PDF' -%}
                 {%- assign sheet_url = sheet.url | default: sheet.url -%}
@@ -143,178 +115,178 @@
 </section>
 
 <style>
-    .accordion-container {
-      max-width: 69%;
-      margin: 30px 0;
-      background-color: #fff;
-    }
+      .accordion-container {
+        max-width: 69%;
+        margin: 30px 0;
+        background-color: #fff;
+      }
 
-    .accordion-container {
-      border: none;
+      .accordion-container {
+        border: none;
 
-    }
+      }
 
-    /* Accordion Header */
-    .accordion-header {
-      width: 100%;
-      text-align: left;
-      background-color: #fff;
-      padding: 15px 0px;
-        font-size: 18px;
-     font-family:'MyriadPro';
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background 0.3s ease;
-      border:none;
-       border-bottom: 1px solid #e5e5e5;
-    }
+      /* Accordion Header */
+      .accordion-header {
+        width: 100%;
+        text-align: left;
+        background-color: #fff;
+        padding: 15px 0px;
+          font-size: 18px;
+       font-family:'MyriadPro';
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.3s ease;
+        border:none;
+         border-bottom: 1px solid #e5e5e5;
+      }
 
-    .accordion-item.active .accordion-content
+      .accordion-item.active .accordion-content
+      {
+          border-bottom: 1px solid #e5e5e5;
+          margin-bottom: 0px;
+      }
+       .accordion-item.active .accordion-header
     {
-        border-bottom: 1px solid #e5e5e5;
-        margin-bottom: 0px;
+        border-bottom: none;
     }
-     .accordion-item.active .accordion-header
+
+      .accordion-icon {
+        font-size: 20px;
+        font-weight: bold;
+        transition: transform 0.3s ease;
+      }
+
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+         padding: 0px 0;
+        background-color: #fff;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+      }
+
+      .accordion-item.active .accordion-content {
+        padding: 15px 0;
+        max-height: 1200px;
+      }
+
+      /* Table Styling */
+  .specification-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+  }
+
+
+  .specification-table td {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    color: #333;
+  }
+
+
+  .specification-table td:first-child {
+    font-weight: bold;
+    width: 35%;
+  }
+
+
+  .specification-table td:last-child {
+    color: #444;
+    width: 65%;
+  }
+
+
+  .specification-table tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+
+  /* Hover Effect */
+  .specification-table tr:hover {
+    background-color: #f0f0f0;
+    transition: background-color 0.2s ease;
+  }
+  .specification-inner
   {
-      border-bottom: none;
+  font-weight:700;
   }
 
-    .accordion-icon {
-      font-size: 20px;
-      font-weight: bold;
-      transition: transform 0.3s ease;
+
+      /* Data Sheet Links */
+
+  .product-data-sheets h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #111;
+  }
+
+
+  .pdf-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Each Item */
+  .pdf-list li {
+    margin-bottom: 10px;
+  }
+
+  /* Links */
+  .pdf-list a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #222;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  /* Hover Effect */
+  .pdf-list a:hover {
+    color: #0071e3; /* Blue hover */
+    text-decoration: underline;
+  }
+
+  /* PDF Icon Styling */
+  .pdf-icon {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+    background: url('https://cdn-icons-png.flaticon.com/512/337/337946.png') no-repeat center center;
+    background-size: contain;
+  }
+
+
+      p.subheading {
+        margin-bottom: 25px;
     }
-
-
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-       padding: 0px 0;
-      background-color: #fff;
-      transition: max-height 0.4s ease, padding 0.3s ease;
+    span.data-sheet-number--count {
+      background: #F7F7F8;
+        font-size: 10px;
+        padding: 5px;
+        border-radius: 8px;
+        border: 1px solid #F7F7F8;
+        position: absolute;
+        right: 20px;
+        top: 18px;
+        width: 25px;
+        height: 25px;
+        display: inline-flex;
+        justify-content: center;
     }
-
-    .accordion-item.active .accordion-content {
-      padding: 15px 0;
-      max-height: 1200px;
+    .accordion-header
+    {
+    position: relative;
     }
-
-    /* Table Styling */
-.specification-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 15px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-}
-
-
-.specification-table td {
-  padding: 10px 15px;
-  border: 1px solid #ddd;
-  color: #333;
-}
-
-
-.specification-table td:first-child {
-  font-weight: bold;
-  width: 35%;
-}
-
-
-.specification-table td:last-child {
-  color: #444;
-  width: 65%;
-}
-
-
-.specification-table tr:nth-child(even) {
-  background-color: #f5f5f5;
-}
-
-/* Hover Effect */
-.specification-table tr:hover {
-  background-color: #f0f0f0;
-  transition: background-color 0.2s ease;
-}
-.specification-inner
-{
-font-weight:700;
-}
-
-
-    /* Data Sheet Links */
-
-.product-data-sheets h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: #111;
-}
-
-
-.pdf-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Each Item */
-.pdf-list li {
-  margin-bottom: 10px;
-}
-
-/* Links */
-.pdf-list a {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: #222;
-  font-size: 15px;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-
-/* Hover Effect */
-.pdf-list a:hover {
-  color: #0071e3; /* Blue hover */
-  text-decoration: underline;
-}
-
-/* PDF Icon Styling */
-.pdf-icon {
-  display: inline-block;
-  width: 28px;
-  height: 28px;
-  margin-right: 10px;
-  background: url('https://cdn-icons-png.flaticon.com/512/337/337946.png') no-repeat center center;
-  background-size: contain;
-}
-
-
-    p.subheading {
-      margin-bottom: 25px;
-  }
-  span.data-sheet-number--count {
-    background: #F7F7F8;
-      font-size: 10px;
-      padding: 5px;
-      border-radius: 8px;
-      border: 1px solid #F7F7F8;
-      position: absolute;
-      right: 20px;
-      top: 18px;
-      width: 25px;
-      height: 25px;
-      display: inline-flex;
-      justify-content: center;
-  }
-  .accordion-header
-  {
-  position: relative;
-  }
 </style>
 
 <script>
