@@ -202,9 +202,10 @@ if (!customElements.get('product-info')) {
             stickyContainer.innerHTML = "Sold out"; 
           }
 
+          var sticky_pro_price = variant.price;
           var stickyContainer_price = document.querySelector('.product-price_sticky_wrraper');
+          stickyContainer.innerHTML = "Add to Cart";
 
-          
           // update the SKU id based on the variant selection 
           var SkuContainer = document.querySelector('.sku-number-custom');
           var SkuContainer_available = variant.sku;
