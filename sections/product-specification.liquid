@@ -44,12 +44,16 @@
     {% endif %}
 
     <!-- Product Data Sheets Accordion -->
+    {%- assign ds_mf = product.metafields.custom.data_sheet -%}
 
-    {% assign data_sheets_json = product.metafields.custom.data_sheet %}
+{%- if ds_mf != blank -%}
+  {%- comment %} Prefer .value for JSON metafields; fallback to parse_json if it's a string. {% endcomment -%}
+  {%- assign data_sheets = ds_mf.value -%}
+  {%- if data_sheets == blank -%}
+    {%- assign data_sheets = ds_mf | default: '[]' | parse_json -%}
+  {%- endif -%}
 
-{% if data_sheets_json != blank %}
-  {% assign data_sheets = data_sheets_json | default: '[]' | parse_json %}
-  {% if data_sheets.size > 0 %}
+  {%- if data_sheets and data_sheets.size > 0 -%}
     <div class="accordion-item">
       <button class="accordion-header">
         <span>Product Data Sheets ({{ data_sheets.size }})</span>
@@ -57,20 +61,23 @@
       </button>
       <div class="accordion-content">
         <ul class="data-sheet-list">
-          {% for sheet in data_sheets %}
-            {% if sheet.url != blank %}
+          {%- for sheet in data_sheets -%}
+            {%- assign sheet_name = sheet.name | default: sheet['name'] | default: 'Download PDF' -%}
+            {%- assign sheet_url  = sheet.url  | default: sheet['url']  -%}
+            {%- if sheet_url != blank -%}
               <li>
-                <a href="{{ sheet.url }}" target="_blank" rel="noopener noreferrer">
-                  {{ sheet.name | default: 'Download PDF' }}
+                <a href="{{ sheet_url }}" target="_blank" rel="noopener noreferrer">
+                  {{ sheet_name }}
                 </a>
               </li>
-            {% endif %}
-          {% endfor %}
+            {%- endif -%}
+          {%- endfor -%}
         </ul>
       </div>
     </div>
-  {% endif %}
-{% endif %}
+  {%- endif -%}
+{%- endif -%}
+
 
   </div>
 </section>
