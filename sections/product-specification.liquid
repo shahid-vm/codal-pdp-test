@@ -210,7 +210,17 @@
     accordionHeaders.forEach((header) => {
       header.addEventListener('click', function () {
         const parent = this.parentElement;
+        const icon = this.querySelector('.accordion-icon');
+
+        // Toggle active class for accordion
         parent.classList.toggle('active');
+
+        // Change icon based on state
+        if (parent.classList.contains('active')) {
+          icon.textContent = '−'; // Open state
+        } else {
+          icon.textContent = '+'; // Closed state
+        }
       });
     });
   });
