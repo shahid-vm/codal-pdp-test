@@ -35,6 +35,39 @@
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-content">
+            <table class="specification-table">
+              <tbody>
+                <tr>
+                  <td>ACEA specification</td>
+                  <td>A5/B5</td>
+                </tr>
+                <tr>
+                  <td>API specification</td>
+                  <td>SL</td>
+                </tr>
+                <tr>
+                  <td>Manufacturer Approval</td>
+                  <td>ACEA C3</td>
+                </tr>
+                <tr>
+                  <td>Manufacturer Approval</td>
+                  <td>BMW LL-04</td>
+                </tr>
+                <tr>
+                  <td>Manufacturer Approval</td>
+                  <td>MB-Approval 229.51/229.31</td>
+                </tr>
+                <tr>
+                  <td>Manufacturer Approval</td>
+                  <td>Meets requirements GM dexos2™</td>
+                </tr>
+                <tr>
+                  <td>SAE viscosity class</td>
+                  <td>MB-Approval 229.51/229.31</td>
+                </tr>
+              </tbody>
+            </table>
+
             <ul class="specification-list">
               {%- for spec in specifications -%}
                 {%- assign label = spec[0] | replace: '_', ' ' | capitalize -%}
@@ -64,7 +97,11 @@
       {%- if data_sheets and data_sheets.size > 0 -%}
         <div class="accordion-item">
           <button class="accordion-header">
-            <span><strong>Product Data Sheets <span class="data-sheet-number--count">{{ data_sheets.size }}</span></strong></span>
+            <span
+              ><strong
+                >Product Data Sheets <span class="data-sheet-number--count">{{ data_sheets.size }}</span></strong
+              ></span
+            >
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-content">
@@ -89,131 +126,129 @@
 </section>
 
 <style>
+    .accordion-container {
+      max-width: 69%;
+      margin: 30px 0;
+      background-color: #fff;
+    }
 
-  .accordion-container {
-    max-width: 69%;
-    margin: 30px 0;
-    background-color: #fff;
-  }
+    .accordion-container {
+      border: none;
 
-  .accordion-container {
-    border: none;
-   
-  }
+    }
 
-  /* Accordion Header */
-  .accordion-header {
-    width: 100%;
-    text-align: left;
-    background-color: #fff;
-    padding: 15px 0px;
-      font-size: 18px;
-   font-family:'MyriadPro';
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background 0.3s ease;
-    border:none;
-     border-bottom: 1px solid #e5e5e5;
-  }
+    /* Accordion Header */
+    .accordion-header {
+      width: 100%;
+      text-align: left;
+      background-color: #fff;
+      padding: 15px 0px;
+        font-size: 18px;
+     font-family:'MyriadPro';
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease;
+      border:none;
+       border-bottom: 1px solid #e5e5e5;
+    }
 
-  .accordion-item.active .accordion-content
+    .accordion-item.active .accordion-content
+    {
+        border-bottom: 1px solid #e5e5e5;
+        margin-bottom: 0px;
+    }
+     .accordion-item.active .accordion-header
   {
-      border-bottom: 1px solid #e5e5e5;
-      margin-bottom: 0px;
-  }
-   .accordion-item.active .accordion-header
-{
-    border-bottom: none;
-}
-
-  .accordion-icon {
-    font-size: 20px;
-    font-weight: bold;
-    transition: transform 0.3s ease;
+      border-bottom: none;
   }
 
-  
-  .accordion-content {
-    max-height: 0;
-    overflow: hidden;
-     padding: 0px 0;
-    background-color: #fff;
-    transition: max-height 0.4s ease, padding 0.3s ease;
-  }
+    .accordion-icon {
+      font-size: 20px;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
 
-  .accordion-item.active .accordion-content {
-    padding: 15px 0;
-    max-height: 1200px;
-  }
 
-  /* Table Styling */
-  .spec-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-  }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+       padding: 0px 0;
+      background-color: #fff;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
 
-  .spec-table td {
-    padding: 10px 12px;
-    border: 1px solid #e1e1e1;
-    font-size: 15px;
-  }
+    .accordion-item.active .accordion-content {
+      padding: 15px 0;
+      max-height: 1200px;
+    }
 
-  .spec-key {
-    font-weight: bold;
-    width: 40%;
-    background-color: #f7f7f7;
-  }
+    /* Table Styling */
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
 
-  .spec-value {
-    color: #333;
-  }
+    .spec-table td {
+      padding: 10px 12px;
+      border: 1px solid #e1e1e1;
+      font-size: 15px;
+    }
 
-  /* Data Sheet Links */
-  .data-sheet-list {
-    list-style: none;
-    padding-left: 5px;
-    margin-top: 10px;
-  }
+    .spec-key {
+      font-weight: bold;
+      width: 40%;
+      background-color: #f7f7f7;
+    }
 
-  .data-sheet-list li {
-    margin: 8px 0;
-  }
+    .spec-value {
+      color: #333;
+    }
 
-  .data-sheet-list a {
-    color: #0073e6;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 15px;
-  }
+    /* Data Sheet Links */
+    .data-sheet-list {
+      list-style: none;
+      padding-left: 5px;
+      margin-top: 10px;
+    }
 
-  .data-sheet-list a:hover {
-    text-decoration: underline;
-  }
-  p.subheading {
-    margin-bottom: 25px;
-}
-span.data-sheet-number--count {
-  background: #F7F7F8;
-    font-size: 10px;
-    padding: 5px;
-    border-radius: 8px;
-    border: 1px solid #F7F7F8;
-    position: absolute;
-    right: 20px;
-    top: 18px;
-    width: 25px;
-    height: 25px;
-    display: inline-flex;
-    justify-content: center;
-}
-.accordion-header
-{
-position: relative;
-}
+    .data-sheet-list li {
+      margin: 8px 0;
+    }
 
+    .data-sheet-list a {
+      color: #0073e6;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .data-sheet-list a:hover {
+      text-decoration: underline;
+    }
+    p.subheading {
+      margin-bottom: 25px;
+  }
+  span.data-sheet-number--count {
+    background: #F7F7F8;
+      font-size: 10px;
+      padding: 5px;
+      border-radius: 8px;
+      border: 1px solid #F7F7F8;
+      position: absolute;
+      right: 20px;
+      top: 18px;
+      width: 25px;
+      height: 25px;
+      display: inline-flex;
+      justify-content: center;
+  }
+  .accordion-header
+  {
+  position: relative;
+  }
 </style>
 
 <script>
