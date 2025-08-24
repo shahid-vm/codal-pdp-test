@@ -8,6 +8,7 @@
   <div class="product-action">
     <div class="product-price">
          <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+            <span class="product-price_sticky_wrraper"></span>
                     {%- render 'price',
                       product: product,
                       use_variant: true,
