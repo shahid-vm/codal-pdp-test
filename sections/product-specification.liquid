@@ -78,6 +78,31 @@
           </button>
           <div class="accordion-content">
             <ul class="data-sheet-list">
+
+                <div class="product-data-sheets">
+  <h3>Product Data Sheets</h3>
+  <ul class="pdf-list">
+    <li>
+      <a href="#" target="_blank">
+        <span class="pdf-icon">📄</span>
+        Data Sheet Lorem Ipsum
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_blank">
+        <span class="pdf-icon">📄</span>
+        Data Sheet Lorem Ipsum Dolor
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_blank">
+        <span class="pdf-icon">📄</span>
+        Data Sheet Lorem Ipsum Dolor Sit Amet
+      </a>
+    </li>
+  </ul>
+</div>
+
               {%- for sheet in data_sheets -%}
                 {%- assign sheet_name = sheet.name | default: sheet.name | default: 'Download PDF' -%}
                 {%- assign sheet_url = sheet.url | default: sheet.url -%}
