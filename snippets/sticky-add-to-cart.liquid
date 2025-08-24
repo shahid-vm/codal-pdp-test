@@ -6,7 +6,16 @@
 
   <!-- Price and Add to Cart -->
   <div class="product-action">
-    <span class="product-price">$368.07</span>
+    <span class="product-price"
+    
+         <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                    {%- render 'price',
+                      product: product,
+                      use_variant: true,
+                      show_badges: true,
+                      price_class: 'price--large'
+                    -%}
+    >$368.07</span>
     <button class="add-to-cart-btn" id="addToCartBtn">Add to Cart</button>
   </div>
 </div>
